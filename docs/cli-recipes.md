@@ -38,6 +38,16 @@ osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 5 
 
 The output is intentionally reviewable Markdown. Maintainers should edit it before opening public issues.
 
+## Build a Maintainer Roadmap
+
+Create a roadmap from the same health signals:
+
+```bash
+osbk roadmap examples/project-profiles/civic-data-commons.manifest.json --output work/roadmap.md
+```
+
+The generated roadmap is a starting point for maintainer planning. It groups work by urgency and includes a review cadence.
+
 ## Generate Reports for Multiple Projects
 
 Use a batch file when reviewing multiple community projects or examples:

@@ -10,6 +10,7 @@ from .health import evaluate_health
 from .init_manifest import write_manifest_template
 from .models import ProjectManifest
 from .reports import render_health_report
+from .roadmap import render_roadmap
 from .scaffold import scaffold_templates
 from .tasks import render_tasks_markdown
 from .validation import validate_example_manifests
@@ -62,6 +63,11 @@ def build_parser() -> argparse.ArgumentParser:
     tasks.add_argument("--limit", type=int)
     tasks.add_argument("--output", "-o", type=Path)
     tasks.set_defaults(func=_tasks)
+
+    roadmap = subparsers.add_parser("roadmap", help="Generate a maintainer roadmap from health gaps.")
+    roadmap.add_argument("manifest", type=Path)
+    roadmap.add_argument("--output", "-o", type=Path)
+    roadmap.set_defaults(func=_roadmap)
 
     scaffold = subparsers.add_parser("scaffold", help="Copy community templates into a project.")
     scaffold.add_argument("destination", type=Path)
@@ -143,6 +149,13 @@ def _tasks(args: argparse.Namespace) -> int:
     manifest = ProjectManifest.from_file(args.manifest)
     tasks = render_tasks_markdown(manifest, limit=args.limit)
     _write_or_print(tasks, args.output)
+    return 0
+
+
+def _roadmap(args: argparse.Namespace) -> int:
+    manifest = ProjectManifest.from_file(args.manifest)
+    roadmap = render_roadmap(manifest)
+    _write_or_print(roadmap, args.output)
     return 0
 
 

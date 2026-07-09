@@ -33,6 +33,7 @@ osbk init-manifest --name "My Project" --repository "https://github.com/me/my-pr
 osbk report examples/project-profiles/civic-data-commons.manifest.json --output work/civic-data-commons-report.md
 osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 3
+osbk roadmap examples/project-profiles/civic-data-commons.manifest.json --output work/roadmap.md
 osbk validate-examples
 ```
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 21:17:04 -05:00
+
+AI model: GPT-5 Codex.
+
+Added maintainer roadmap generation.
+
+- Added `osbk roadmap` to convert health gaps into immediate, next, and later planning sections.
+- Added roadmap rendering with a maintainer review cadence.
+- Documented roadmap generation in the README and CLI recipes.
+
 ## 2026-07-08 21:16:19 -05:00
 
 AI model: GPT-5 Codex.
