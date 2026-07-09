@@ -81,3 +81,7 @@ signals:
 ## Repository status
 
 This is an early public toolkit. The initial focus is practical maintainer operations: docs, reports, checklists, and community scaffolding.
+
+## Manifest Schema
+
+Simple manifests can be checked against [`schema/manifest.schema.json`](schema/manifest.schema.json) in editors and external validation tools.
