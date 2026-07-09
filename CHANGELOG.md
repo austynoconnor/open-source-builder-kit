@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 19:54:25 -05:00
+
+AI model: GPT-5 Codex.
+
+Added contributor task suggestions.
+
+- Added `osbk tasks` to convert missing health signals into scoped contributor work items.
+- Added task rendering for docs, triage, review, quality, release, security, planning, and governance gaps.
+- Updated the README quick start with the new contributor task command.
+
 ## 2026-07-08 19:12:00 -05:00
 
 AI model: GPT-5 Codex.

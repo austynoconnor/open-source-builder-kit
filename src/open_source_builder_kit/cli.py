@@ -9,6 +9,7 @@ from .health import evaluate_health
 from .models import ProjectManifest
 from .reports import render_health_report
 from .scaffold import scaffold_templates
+from .tasks import render_tasks_markdown
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -42,6 +43,12 @@ def build_parser() -> argparse.ArgumentParser:
     checklist.add_argument("kind", choices=sorted(CHECKLISTS))
     checklist.add_argument("--output", "-o", type=Path)
     checklist.set_defaults(func=_checklist)
+
+    tasks = subparsers.add_parser("tasks", help="Suggest contributor tasks from health gaps.")
+    tasks.add_argument("manifest", type=Path)
+    tasks.add_argument("--limit", type=int)
+    tasks.add_argument("--output", "-o", type=Path)
+    tasks.set_defaults(func=_tasks)
 
     scaffold = subparsers.add_parser("scaffold", help="Copy community templates into a project.")
     scaffold.add_argument("destination", type=Path)
@@ -80,6 +87,13 @@ def _batch_report(args: argparse.Namespace) -> int:
 def _checklist(args: argparse.Namespace) -> int:
     checklist = render_checklist(args.kind)
     _write_or_print(checklist, args.output)
+    return 0
+
+
+def _tasks(args: argparse.Namespace) -> int:
+    manifest = ProjectManifest.from_file(args.manifest)
+    tasks = render_tasks_markdown(manifest, limit=args.limit)
+    _write_or_print(tasks, args.output)
     return 0
 
 
