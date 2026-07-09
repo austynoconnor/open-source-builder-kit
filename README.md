@@ -14,7 +14,7 @@ This repository is designed around one goal: make healthy open-source maintenanc
 - `docs/`: maintainer playbooks, lightweight governance guidance, and practical CLI recipes.
 - `examples/`: demo manifests and sample reports.
 
-See [CLI recipes](docs/cli-recipes.md) for maintainer workflows that combine these commands.
+See [CLI recipes](docs/cli-recipes.md) for maintainer workflows that combine these commands, and [command reference](docs/command-reference.md) for the full CLI surface.
 
 ## Why this helps open source
 
