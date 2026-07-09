@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "0.1-demo",
+  "demoOnly": true,
+  "signals": [
+    {
+      "projectSlug": "civic-data-commons",
+      "period": "2026-Q2",
+      "issueLabels": {
+        "good first issue": 16,
+        "needs triage": 18,
+        "accessibility": 7,
+        "dataset adapter": 21
+      },
+      "discussionThemes": [
+        "publishing procurement-friendly deployment notes",
+        "adding examples for small-city datasets",
+        "clarifying review ownership for accessibility fixes"
+      ],
+      "maintainerNotes": [
+        "Backlog review should happen before the next adapter sprint.",
+        "A maintainer guide would help rotate triage duties."
+      ]
+    },
+    {
+      "projectSlug": "learning-lab-toolkit",
+      "period": "2026-Q2",
+      "issueLabels": {
+        "good first issue": 9,
+        "needs triage": 8,
+        "translation": 12,
+        "lesson-feedback": 14
+      },
+      "discussionThemes": [
+        "making pilot feedback easier for teachers to submit",
+        "separating translation review from lesson design review",
+        "preparing materials before fall classroom planning"
+      ],
+      "maintainerNotes": [
+        "Review time is likely to rise in August unless reviewer capacity improves.",
+        "Non-code contribution paths are valuable but need clearer templates."
+      ]
+    }
+  ]
+}

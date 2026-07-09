@@ -1,0 +1,28 @@
+name: Documentation issue
+description: Report missing, confusing, or incorrect documentation.
+title: "[Docs]: "
+labels:
+  - documentation
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: Documentation location
+      description: Link to the page or file where the issue appears.
+      placeholder: https://github.com/austynoconnor/open-source-builder-kit/...
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs to change?
+      description: Describe what is missing, inaccurate, or unclear.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: If you know the wording or structure that would help, add it here.
+    validations:
+      required: false

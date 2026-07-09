@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "0.1-demo",
+  "demoOnly": true,
+  "projects": [
+    {
+      "slug": "civic-data-commons",
+      "manifestPath": "examples/project-profiles/civic-data-commons.manifest.json",
+      "communityType": "public-interest software",
+      "defaultReportFormat": "markdown",
+      "tags": ["civic-tech", "open-data", "typescript", "public-sector"]
+    },
+    {
+      "slug": "learning-lab-toolkit",
+      "manifestPath": "examples/project-profiles/learning-lab-toolkit.manifest.json",
+      "communityType": "education documentation",
+      "defaultReportFormat": "markdown",
+      "tags": ["education", "curriculum", "documentation", "markdown"]
+    }
+  ]
+}

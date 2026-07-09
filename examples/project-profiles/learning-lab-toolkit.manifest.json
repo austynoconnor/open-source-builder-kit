@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "0.1-demo",
+  "demoOnly": true,
+  "project": {
+    "name": "Learning Lab Toolkit",
+    "slug": "learning-lab-toolkit",
+    "description": "A demo open-source curriculum and documentation kit for educators running project-based learning workshops.",
+    "homepage": "https://example.org/learning-lab-toolkit",
+    "repository": "https://github.com/example/learning-lab-toolkit",
+    "license": "CC-BY-4.0",
+    "primaryLanguage": "Markdown",
+    "maturity": "early",
+    "audience": [
+      "teachers",
+      "library workshop coordinators",
+      "student mentors"
+    ]
+  },
+  "community": {
+    "maintainerModel": "two part-time maintainers with seasonal curriculum reviewers",
+    "governance": "lightweight decision log and public issue templates",
+    "codeOfConduct": "Contributor Covenant 2.1",
+    "communicationChannels": [
+      {
+        "name": "GitHub Issues",
+        "purpose": "lesson bugs and curriculum requests"
+      },
+      {
+        "name": "Educator mailing list",
+        "purpose": "release announcements and classroom feedback"
+      }
+    ],
+    "contributionPaths": [
+      "lesson corrections",
+      "translation review",
+      "classroom pilot notes",
+      "accessibility review"
+    ]
+  },
+  "healthSignals": {
+    "issueBacklog": {
+      "openIssues": 42,
+      "issuesOlderThan90Days": 11,
+      "untriagedIssues": 8
+    },
+    "pullRequests": {
+      "openPullRequests": 6,
+      "medianReviewTimeDays": 7.8,
+      "stalePullRequests": 2
+    },
+    "community": {
+      "monthlyActiveContributors": 12,
+      "firstTimeContributorsLast90Days": 6,
+      "maintainerCount": 2
+    },
+    "docs": {
+      "hasQuickstart": true,
+      "hasArchitectureGuide": false,
+      "hasMaintainerGuide": false,
+      "lastDocsAudit": "2026-05-30"
+    }
+  },
+  "toolkitGoals": [
+    "highlight contribution paths that fit non-developer educators",
+    "surface review bottlenecks before school-year planning cycles",
+    "produce a roadmap that separates curriculum quality work from platform work"
+  ]
+}

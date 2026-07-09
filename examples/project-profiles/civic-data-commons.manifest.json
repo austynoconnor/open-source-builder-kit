@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "0.1-demo",
+  "demoOnly": true,
+  "project": {
+    "name": "Civic Data Commons",
+    "slug": "civic-data-commons",
+    "description": "A demo open-source toolkit for publishing searchable municipal datasets with clear metadata and lightweight contributor workflows.",
+    "homepage": "https://example.org/civic-data-commons",
+    "repository": "https://github.com/example/civic-data-commons",
+    "license": "Apache-2.0",
+    "primaryLanguage": "TypeScript",
+    "maturity": "growth",
+    "audience": [
+      "municipal data teams",
+      "civic technologists",
+      "public-interest researchers"
+    ]
+  },
+  "community": {
+    "maintainerModel": "small volunteer core with rotating triage support",
+    "governance": "documented maintainer roles with monthly public planning notes",
+    "codeOfConduct": "Contributor Covenant 2.1",
+    "communicationChannels": [
+      {
+        "name": "GitHub Discussions",
+        "purpose": "support questions and feature proposals"
+      },
+      {
+        "name": "Monthly community call",
+        "purpose": "roadmap review and onboarding"
+      }
+    ],
+    "contributionPaths": [
+      "good first issue",
+      "documentation fixes",
+      "dataset adapter examples",
+      "accessibility testing"
+    ]
+  },
+  "healthSignals": {
+    "issueBacklog": {
+      "openIssues": 124,
+      "issuesOlderThan90Days": 37,
+      "untriagedIssues": 18
+    },
+    "pullRequests": {
+      "openPullRequests": 14,
+      "medianReviewTimeDays": 4.6,
+      "stalePullRequests": 3
+    },
+    "community": {
+      "monthlyActiveContributors": 22,
+      "firstTimeContributorsLast90Days": 9,
+      "maintainerCount": 5
+    },
+    "docs": {
+      "hasQuickstart": true,
+      "hasArchitectureGuide": true,
+      "hasMaintainerGuide": false,
+      "lastDocsAudit": "2026-06-15"
+    }
+  },
+  "toolkitGoals": [
+    "identify backlog areas where maintainers need triage support",
+    "turn community health signals into a transparent roadmap",
+    "prepare onboarding recommendations for public-sector contributors"
+  ]
+}

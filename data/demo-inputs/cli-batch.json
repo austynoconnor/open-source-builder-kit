@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "0.1-demo",
+  "demoOnly": true,
+  "description": "Example batch input for a future CLI health-report command.",
+  "commandPreview": "osbk health-report --input data/demo-inputs/cli-batch.json --out examples/sample-outputs",
+  "jobs": [
+    {
+      "projectSlug": "civic-data-commons",
+      "manifest": "examples/project-profiles/civic-data-commons.manifest.json",
+      "signals": "data/demo-inputs/community-signals.json",
+      "survey": "data/demo-inputs/maintainer-survey.csv",
+      "output": "examples/sample-outputs/civic-data-commons.health-report.md",
+      "reportProfile": "community-health"
+    },
+    {
+      "projectSlug": "learning-lab-toolkit",
+      "manifest": "examples/project-profiles/learning-lab-toolkit.manifest.json",
+      "signals": "data/demo-inputs/community-signals.json",
+      "survey": "data/demo-inputs/maintainer-survey.csv",
+      "output": "examples/sample-outputs/learning-lab-toolkit.health-report.md",
+      "reportProfile": "community-health"
+    }
+  ]
+}
