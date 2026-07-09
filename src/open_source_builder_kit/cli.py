@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from .batch import run_report_batch
@@ -27,6 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     health = subparsers.add_parser("health", help="Score a project manifest.")
     health.add_argument("manifest", type=Path)
+    health.add_argument("--json", action="store_true", help="Print machine-readable health output.")
     health.set_defaults(func=_health)
 
     report = subparsers.add_parser("report", help="Generate a Markdown health report.")
@@ -61,6 +63,23 @@ def build_parser() -> argparse.ArgumentParser:
 def _health(args: argparse.Namespace) -> int:
     manifest = ProjectManifest.from_file(args.manifest)
     result = evaluate_health(manifest)
+    if args.json:
+        print(
+            json.dumps(
+                {
+                    "name": manifest.name,
+                    "repository": manifest.repository,
+                    "score": result.score,
+                    "grade": result.grade,
+                    "present": result.present,
+                    "missing": result.missing,
+                    "recommendations": result.recommendations,
+                },
+                indent=2,
+            )
+        )
+        return 0
+
     print(f"{manifest.name}: {result.score}/100 ({result.grade})")
     if result.missing:
         print("\nMissing signals:")

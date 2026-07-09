@@ -10,6 +10,12 @@ Run a health score first so the project has a clear baseline:
 osbk health examples/project-profiles/civic-data-commons.manifest.json
 ```
 
+Use JSON output when another script needs to read the score:
+
+```bash
+osbk health examples/project-profiles/civic-data-commons.manifest.json --json
+```
+
 Then generate a report that can be attached to an issue, planning note, or maintainer discussion:
 
 ```bash
@@ -55,4 +61,3 @@ osbk scaffold ../my-open-source-project
 ```
 
 Review every generated file before publishing. Templates are meant to accelerate maintainer work, not pretend every project has the same governance model.
-

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 19:56:25 -05:00
+
+AI model: GPT-5 Codex.
+
+Added machine-readable health output.
+
+- Added `osbk health --json` for CI, dashboards, and downstream automation.
+- Documented JSON health output in the README and CLI recipes.
+- Added CLI coverage for the JSON health output shape.
+
 ## 2026-07-08 19:55:48 -05:00
 
 AI model: GPT-5 Codex.
