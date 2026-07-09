@@ -8,6 +8,7 @@ from .batch import run_report_batch
 from .checklists import CHECKLISTS, render_checklist
 from .health import evaluate_health
 from .init_manifest import write_manifest_template
+from .labels import render_labels
 from .models import ProjectManifest
 from .reports import render_health_report
 from .roadmap import render_roadmap
@@ -48,6 +49,11 @@ def build_parser() -> argparse.ArgumentParser:
     report.add_argument("manifest", type=Path)
     report.add_argument("--output", "-o", type=Path)
     report.set_defaults(func=_report)
+
+    labels = subparsers.add_parser("labels", help="Print recommended GitHub labels.")
+    labels.add_argument("--format", choices=["yaml", "json"], default="yaml")
+    labels.add_argument("--output", "-o", type=Path)
+    labels.set_defaults(func=_labels)
 
     batch = subparsers.add_parser("batch-report", help="Generate reports for every job in a batch file.")
     batch.add_argument("batch_file", type=Path)
@@ -134,6 +140,12 @@ def _report(args: argparse.Namespace) -> int:
     manifest = ProjectManifest.from_file(args.manifest)
     report = render_health_report(manifest)
     _write_or_print(report, args.output)
+    return 0
+
+
+def _labels(args: argparse.Namespace) -> int:
+    labels = render_labels(args.format)
+    _write_or_print(labels, args.output)
     return 0
 
 
