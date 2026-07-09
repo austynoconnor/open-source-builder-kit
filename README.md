@@ -31,6 +31,7 @@ osbk health examples/project-profiles/civic-data-commons.manifest.json
 osbk health examples/project-profiles/civic-data-commons.manifest.json --json
 osbk init-manifest --name "My Project" --repository "https://github.com/me/my-project" --description "What the project helps people do." --output work/my-project.yml
 osbk labels --format yaml --output work/labels.yml
+osbk doctor .
 osbk report examples/project-profiles/civic-data-commons.manifest.json --output work/civic-data-commons-report.md
 osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 osbk compare examples/project-profiles/civic-data-commons.manifest.json examples/project-profiles/learning-lab-toolkit.manifest.json --output work/comparison.md

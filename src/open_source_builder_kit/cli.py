@@ -7,6 +7,7 @@ from pathlib import Path
 from .batch import run_report_batch
 from .checklists import CHECKLISTS, render_checklist
 from .compare import render_comparison
+from .doctor import inspect_repository, render_doctor_result
 from .health import evaluate_health
 from .init_manifest import write_manifest_template
 from .labels import render_labels
@@ -47,6 +48,11 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--output", "-o", type=Path, required=True)
     init.add_argument("--overwrite", action="store_true")
     init.set_defaults(func=_init_manifest)
+
+    doctor = subparsers.add_parser("doctor", help="Check a repository for key community files.")
+    doctor.add_argument("root", type=Path)
+    doctor.add_argument("--output", "-o", type=Path)
+    doctor.set_defaults(func=_doctor)
 
     report = subparsers.add_parser("report", help="Generate a Markdown health report.")
     report.add_argument("manifest", type=Path)
@@ -153,6 +159,12 @@ def _init_manifest(args: argparse.Namespace) -> int:
     )
     print(f"Wrote {output}")
     return 0
+
+
+def _doctor(args: argparse.Namespace) -> int:
+    result = inspect_repository(args.root)
+    _write_or_print(render_doctor_result(result), args.output)
+    return 0 if result.ok else 1
 
 
 def _report(args: argparse.Namespace) -> int:
