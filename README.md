@@ -10,8 +10,8 @@ This repository is designed around one goal: make healthy open-source maintenanc
 - `osbk report`: generate a Markdown health report from project metadata.
 - `osbk checklist`: create maintainer checklists for releases, issue triage, docs, and onboarding.
 - `osbk scaffold`: copy reusable community templates into a project.
-- `templates/`: README, contributing, security, and code of conduct templates.
-- `docs/`: maintainer playbooks and practical guidance.
+- `templates/`: README, contributing, security, code of conduct, and decision log templates.
+- `docs/`: maintainer playbooks, lightweight governance guidance, and practical CLI recipes.
 - `examples/`: demo manifests and sample reports.
 
 See [CLI recipes](docs/cli-recipes.md) for maintainer workflows that combine these commands.

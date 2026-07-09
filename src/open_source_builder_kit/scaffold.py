@@ -9,6 +9,7 @@ TEMPLATE_MAP: dict[str, str] = {
     "CONTRIBUTING-template.md": "CONTRIBUTING.md",
     "CODE_OF_CONDUCT-template.md": "CODE_OF_CONDUCT.md",
     "SECURITY-template.md": "SECURITY.md",
+    "DECISION_LOG-template.md": "DECISION_LOG.md",
 }
 
 
@@ -27,4 +28,3 @@ def scaffold_templates(destination: Path, overwrite: bool = False) -> list[Path]
         target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
         written.append(target)
     return written
-
