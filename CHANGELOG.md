@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 19:55:14 -05:00
+
+AI model: GPT-5 Codex.
+
+Improved generated health reports.
+
+- Added score-band language and maintainer focus guidance to generated reports.
+- Embedded the top contributor-ready tasks in health reports so reports lead directly to action.
+- Added regression coverage for the new report sections.
+
 ## 2026-07-08 19:54:25 -05:00
 
 AI model: GPT-5 Codex.
