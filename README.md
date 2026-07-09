@@ -33,6 +33,7 @@ osbk init-manifest --name "My Project" --repository "https://github.com/me/my-pr
 osbk labels --format yaml --output work/labels.yml
 osbk report examples/project-profiles/civic-data-commons.manifest.json --output work/civic-data-commons-report.md
 osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
+osbk compare examples/project-profiles/civic-data-commons.manifest.json examples/project-profiles/learning-lab-toolkit.manifest.json --output work/comparison.md
 osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 3
 osbk roadmap examples/project-profiles/civic-data-commons.manifest.json --output work/roadmap.md
 osbk survey-summary data/demo-inputs/maintainer-survey.csv --output work/survey-summary.md

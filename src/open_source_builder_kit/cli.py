@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .batch import run_report_batch
 from .checklists import CHECKLISTS, render_checklist
+from .compare import render_comparison
 from .health import evaluate_health
 from .init_manifest import write_manifest_template
 from .labels import render_labels
@@ -59,6 +60,11 @@ def build_parser() -> argparse.ArgumentParser:
     batch.add_argument("batch_file", type=Path)
     batch.add_argument("--output-dir", "-o", type=Path)
     batch.set_defaults(func=_batch_report)
+
+    compare = subparsers.add_parser("compare", help="Compare health scores for multiple manifests.")
+    compare.add_argument("manifests", nargs="+", type=Path)
+    compare.add_argument("--output", "-o", type=Path)
+    compare.set_defaults(func=_compare)
 
     checklist = subparsers.add_parser("checklist", help="Print a maintainer checklist.")
     checklist.add_argument("kind", choices=sorted(CHECKLISTS))
@@ -154,6 +160,12 @@ def _batch_report(args: argparse.Namespace) -> int:
     print("Wrote batch reports:")
     for result in results:
         print(f"- {result.project_slug}: {result.output}")
+    return 0
+
+
+def _compare(args: argparse.Namespace) -> int:
+    comparison = render_comparison(args.manifests)
+    _write_or_print(comparison, args.output)
     return 0
 
 
