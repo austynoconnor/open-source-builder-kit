@@ -7,6 +7,7 @@ from pathlib import Path
 from .batch import run_report_batch
 from .checklists import CHECKLISTS, render_checklist
 from .health import evaluate_health
+from .init_manifest import write_manifest_template
 from .models import ProjectManifest
 from .reports import render_health_report
 from .scaffold import scaffold_templates
@@ -31,6 +32,15 @@ def build_parser() -> argparse.ArgumentParser:
     health.add_argument("manifest", type=Path)
     health.add_argument("--json", action="store_true", help="Print machine-readable health output.")
     health.set_defaults(func=_health)
+
+    init = subparsers.add_parser("init-manifest", help="Create a starter project manifest.")
+    init.add_argument("--name", required=True)
+    init.add_argument("--repository", required=True)
+    init.add_argument("--description", required=True)
+    init.add_argument("--license", default="MIT", dest="license_name")
+    init.add_argument("--output", "-o", type=Path, required=True)
+    init.add_argument("--overwrite", action="store_true")
+    init.set_defaults(func=_init_manifest)
 
     report = subparsers.add_parser("report", help="Generate a Markdown health report.")
     report.add_argument("manifest", type=Path)
@@ -92,6 +102,19 @@ def _health(args: argparse.Namespace) -> int:
         print("\nMissing signals:")
         for signal in result.missing:
             print(f"- {signal}")
+    return 0
+
+
+def _init_manifest(args: argparse.Namespace) -> int:
+    output = write_manifest_template(
+        output=args.output,
+        name=args.name,
+        repository=args.repository,
+        description=args.description,
+        license_name=args.license_name,
+        overwrite=args.overwrite,
+    )
+    print(f"Wrote {output}")
     return 0
 
 

@@ -4,6 +4,12 @@ These recipes show practical ways maintainers can use Open Source Builder Kit du
 
 ## Review a Project Before Asking for Help
 
+Create a starter manifest for a project:
+
+```bash
+osbk init-manifest --name "My Project" --repository "https://github.com/me/my-project" --description "What the project helps people do." --output work/my-project.yml
+```
+
 Run a health score first so the project has a clear baseline:
 
 ```bash

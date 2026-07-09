@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 21:16:19 -05:00
+
+AI model: GPT-5 Codex.
+
+Added manifest initialization.
+
+- Added `osbk init-manifest` to create starter JSON or YAML project manifests.
+- Added manifest template generation with default community-health signals.
+- Documented the manifest initialization flow in the README and CLI recipes.
+
 ## 2026-07-08 19:56:58 -05:00
 
 AI model: GPT-5 Codex.
