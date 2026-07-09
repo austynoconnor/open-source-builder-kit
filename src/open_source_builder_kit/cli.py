@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .batch import run_report_batch
 from .checklists import CHECKLISTS, render_checklist
 from .health import evaluate_health
 from .models import ProjectManifest
@@ -31,6 +32,11 @@ def build_parser() -> argparse.ArgumentParser:
     report.add_argument("manifest", type=Path)
     report.add_argument("--output", "-o", type=Path)
     report.set_defaults(func=_report)
+
+    batch = subparsers.add_parser("batch-report", help="Generate reports for every job in a batch file.")
+    batch.add_argument("batch_file", type=Path)
+    batch.add_argument("--output-dir", "-o", type=Path)
+    batch.set_defaults(func=_batch_report)
 
     checklist = subparsers.add_parser("checklist", help="Print a maintainer checklist.")
     checklist.add_argument("kind", choices=sorted(CHECKLISTS))
@@ -63,6 +69,14 @@ def _report(args: argparse.Namespace) -> int:
     return 0
 
 
+def _batch_report(args: argparse.Namespace) -> int:
+    results = run_report_batch(args.batch_file, output_dir=args.output_dir)
+    print("Wrote batch reports:")
+    for result in results:
+        print(f"- {result.project_slug}: {result.output}")
+    return 0
+
+
 def _checklist(args: argparse.Namespace) -> int:
     checklist = render_checklist(args.kind)
     _write_or_print(checklist, args.output)
@@ -87,4 +101,3 @@ def _write_or_print(content: str, output: Path | None) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(content, encoding="utf-8")
     print(f"Wrote {output}")
-

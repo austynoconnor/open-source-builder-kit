@@ -27,6 +27,7 @@ pip install -e .
 osbk --help
 osbk health examples/project-profiles/civic-data-commons.manifest.json
 osbk report examples/project-profiles/civic-data-commons.manifest.json --output work/civic-data-commons-report.md
+osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 ```
 
 No API keys are required for the core tools.

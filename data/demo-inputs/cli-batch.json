@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1-demo",
   "demoOnly": true,
-  "description": "Example batch input for a future CLI health-report command.",
-  "commandPreview": "osbk health-report --input data/demo-inputs/cli-batch.json --out examples/sample-outputs",
+  "description": "Example batch input for generating multiple project health reports.",
+  "commandPreview": "osbk batch-report data/demo-inputs/cli-batch.json --output-dir examples/sample-outputs",
   "jobs": [
     {
       "projectSlug": "civic-data-commons",

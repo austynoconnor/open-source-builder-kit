@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 19:12:00 -05:00
+
+AI model: GPT-5 Codex.
+
+Added batch health report generation.
+
+- Added `osbk batch-report` for generating multiple project health reports from a single JSON batch file.
+- Added batch job result handling and path resolution for repo-local manifests and outputs.
+- Updated the README and demo batch input to document the new command.
+
 ## 2026-07-08 19:02:07 -05:00
 
 AI model: GPT-5 Codex.
