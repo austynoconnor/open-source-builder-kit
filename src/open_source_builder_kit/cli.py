@@ -14,6 +14,7 @@ from .models import ProjectManifest
 from .reports import render_health_report
 from .roadmap import render_roadmap
 from .scaffold import scaffold_templates
+from .support import render_support_policy
 from .survey import render_survey_summary
 from .tasks import render_tasks_markdown
 from .validation import validate_example_manifests
@@ -86,6 +87,11 @@ def build_parser() -> argparse.ArgumentParser:
     survey.add_argument("survey_csv", type=Path)
     survey.add_argument("--output", "-o", type=Path)
     survey.set_defaults(func=_survey_summary)
+
+    support = subparsers.add_parser("support-policy", help="Generate a project support policy.")
+    support.add_argument("manifest", type=Path)
+    support.add_argument("--output", "-o", type=Path)
+    support.set_defaults(func=_support_policy)
 
     scaffold = subparsers.add_parser("scaffold", help="Copy community templates into a project.")
     scaffold.add_argument("destination", type=Path)
@@ -192,6 +198,13 @@ def _roadmap(args: argparse.Namespace) -> int:
 def _survey_summary(args: argparse.Namespace) -> int:
     summary = render_survey_summary(args.survey_csv)
     _write_or_print(summary, args.output)
+    return 0
+
+
+def _support_policy(args: argparse.Namespace) -> int:
+    manifest = ProjectManifest.from_file(args.manifest)
+    policy = render_support_policy(manifest)
+    _write_or_print(policy, args.output)
     return 0
 
 

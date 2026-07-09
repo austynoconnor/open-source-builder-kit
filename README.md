@@ -37,6 +37,7 @@ osbk compare examples/project-profiles/civic-data-commons.manifest.json examples
 osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 3
 osbk roadmap examples/project-profiles/civic-data-commons.manifest.json --output work/roadmap.md
 osbk survey-summary data/demo-inputs/maintainer-survey.csv --output work/survey-summary.md
+osbk support-policy examples/project-profiles/civic-data-commons.manifest.json --output work/SUPPORT.md
 osbk validate-examples
 ```
 
