@@ -12,6 +12,7 @@ from .init_manifest import write_manifest_template
 from .labels import render_labels
 from .models import ProjectManifest
 from .reports import render_health_report
+from .release_notes import render_release_notes
 from .roadmap import render_roadmap
 from .scaffold import scaffold_templates
 from .support import render_support_policy
@@ -92,6 +93,12 @@ def build_parser() -> argparse.ArgumentParser:
     support.add_argument("manifest", type=Path)
     support.add_argument("--output", "-o", type=Path)
     support.set_defaults(func=_support_policy)
+
+    release_notes = subparsers.add_parser("release-notes", help="Draft release notes from a manifest.")
+    release_notes.add_argument("manifest", type=Path)
+    release_notes.add_argument("--version", required=True)
+    release_notes.add_argument("--output", "-o", type=Path)
+    release_notes.set_defaults(func=_release_notes)
 
     scaffold = subparsers.add_parser("scaffold", help="Copy community templates into a project.")
     scaffold.add_argument("destination", type=Path)
@@ -205,6 +212,13 @@ def _support_policy(args: argparse.Namespace) -> int:
     manifest = ProjectManifest.from_file(args.manifest)
     policy = render_support_policy(manifest)
     _write_or_print(policy, args.output)
+    return 0
+
+
+def _release_notes(args: argparse.Namespace) -> int:
+    manifest = ProjectManifest.from_file(args.manifest)
+    notes = render_release_notes(manifest, args.version)
+    _write_or_print(notes, args.output)
     return 0
 
 
