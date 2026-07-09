@@ -34,6 +34,7 @@ osbk report examples/project-profiles/civic-data-commons.manifest.json --output 
 osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 3
 osbk roadmap examples/project-profiles/civic-data-commons.manifest.json --output work/roadmap.md
+osbk survey-summary data/demo-inputs/maintainer-survey.csv --output work/survey-summary.md
 osbk validate-examples
 ```
 

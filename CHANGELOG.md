@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 21:17:44 -05:00
+
+AI model: GPT-5 Codex.
+
+Added maintainer survey summaries.
+
+- Added `osbk survey-summary` for converting maintainer survey CSV data into Markdown.
+- Added project/topic grouping with average ratings and notes.
+- Documented survey summary workflows in the README and CLI recipes.
+
 ## 2026-07-08 21:17:04 -05:00
 
 AI model: GPT-5 Codex.

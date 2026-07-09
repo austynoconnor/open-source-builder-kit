@@ -68,6 +68,16 @@ osbk validate-examples
 
 This confirms each example manifest can be loaded and scored.
 
+## Summarize Maintainer Feedback
+
+Turn a simple CSV survey into Markdown:
+
+```bash
+osbk survey-summary data/demo-inputs/maintainer-survey.csv --output work/survey-summary.md
+```
+
+This is useful when maintainers collect lightweight feedback during planning, release retrospectives, or contributor onboarding reviews.
+
 ## Prepare for a Release
 
 Generate a release checklist before tagging:
