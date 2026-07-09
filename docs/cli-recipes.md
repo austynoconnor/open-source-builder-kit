@@ -42,6 +42,16 @@ osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 
 Each job in the batch file points at a manifest and produces one Markdown report.
 
+## Validate Demo Content
+
+Run this before publishing changes to examples:
+
+```bash
+osbk validate-examples
+```
+
+This confirms each example manifest can be loaded and scored.
+
 ## Prepare for a Release
 
 Generate a release checklist before tagging:

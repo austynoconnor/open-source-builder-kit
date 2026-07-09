@@ -32,6 +32,7 @@ osbk health examples/project-profiles/civic-data-commons.manifest.json --json
 osbk report examples/project-profiles/civic-data-commons.manifest.json --output work/civic-data-commons-report.md
 osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 3
+osbk validate-examples
 ```
 
 No API keys are required for the core tools.

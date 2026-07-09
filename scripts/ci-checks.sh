@@ -13,6 +13,9 @@ if [[ -f pyproject.toml ]]; then
 
   echo "Running pytest."
   python -m pytest
+
+  echo "Validating example manifests."
+  osbk validate-examples
   ran_checks=true
 fi
 

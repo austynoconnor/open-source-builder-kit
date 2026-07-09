@@ -11,6 +11,7 @@ from .models import ProjectManifest
 from .reports import render_health_report
 from .scaffold import scaffold_templates
 from .tasks import render_tasks_markdown
+from .validation import validate_example_manifests
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -56,6 +57,12 @@ def build_parser() -> argparse.ArgumentParser:
     scaffold.add_argument("destination", type=Path)
     scaffold.add_argument("--overwrite", action="store_true")
     scaffold.set_defaults(func=_scaffold)
+
+    validate = subparsers.add_parser(
+        "validate-examples", help="Validate that example manifests load and score."
+    )
+    validate.add_argument("--root", type=Path, default=Path("examples/project-profiles"))
+    validate.set_defaults(func=_validate_examples)
 
     return parser
 
@@ -124,6 +131,14 @@ def _scaffold(args: argparse.Namespace) -> int:
             print(f"- {path}")
     else:
         print("No files written. Use --overwrite to replace existing files.")
+    return 0
+
+
+def _validate_examples(args: argparse.Namespace) -> int:
+    results = validate_example_manifests(args.root)
+    print("Validated example manifests:")
+    for result in results:
+        print(f"- {result.project_name}: {result.score}/100 ({result.path})")
     return 0
 
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 19:56:58 -05:00
+
+AI model: GPT-5 Codex.
+
+Added example manifest validation.
+
+- Added `osbk validate-examples` to load and score every example manifest.
+- Added validation to the CI check script so sample content cannot drift silently.
+- Documented example validation in the README and CLI recipes.
+
 ## 2026-07-08 19:56:25 -05:00
 
 AI model: GPT-5 Codex.
