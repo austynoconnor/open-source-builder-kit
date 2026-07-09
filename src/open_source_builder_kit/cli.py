@@ -10,6 +10,7 @@ from .compare import render_comparison
 from .doctor import inspect_repository, render_doctor_result
 from .health import evaluate_health
 from .init_manifest import write_manifest_template
+from .issues import render_issue_plan
 from .labels import render_labels
 from .models import ProjectManifest
 from .reports import render_health_report
@@ -84,6 +85,12 @@ def build_parser() -> argparse.ArgumentParser:
     tasks.add_argument("--limit", type=int)
     tasks.add_argument("--output", "-o", type=Path)
     tasks.set_defaults(func=_tasks)
+
+    issues = subparsers.add_parser("issue-plan", help="Generate GitHub issue drafts from health gaps.")
+    issues.add_argument("manifest", type=Path)
+    issues.add_argument("--limit", type=int)
+    issues.add_argument("--output", "-o", type=Path)
+    issues.set_defaults(func=_issue_plan)
 
     roadmap = subparsers.add_parser("roadmap", help="Generate a maintainer roadmap from health gaps.")
     roadmap.add_argument("manifest", type=Path)
@@ -204,6 +211,13 @@ def _tasks(args: argparse.Namespace) -> int:
     manifest = ProjectManifest.from_file(args.manifest)
     tasks = render_tasks_markdown(manifest, limit=args.limit)
     _write_or_print(tasks, args.output)
+    return 0
+
+
+def _issue_plan(args: argparse.Namespace) -> int:
+    manifest = ProjectManifest.from_file(args.manifest)
+    plan = render_issue_plan(manifest, limit=args.limit)
+    _write_or_print(plan, args.output)
     return 0
 
 

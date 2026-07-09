@@ -36,6 +36,7 @@ osbk report examples/project-profiles/civic-data-commons.manifest.json --output 
 osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
 osbk compare examples/project-profiles/civic-data-commons.manifest.json examples/project-profiles/learning-lab-toolkit.manifest.json --output work/comparison.md
 osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 3
+osbk issue-plan examples/project-profiles/civic-data-commons.manifest.json --limit 3 --output work/issues.md
 osbk roadmap examples/project-profiles/civic-data-commons.manifest.json --output work/roadmap.md
 osbk survey-summary data/demo-inputs/maintainer-survey.csv --output work/survey-summary.md
 osbk support-policy examples/project-profiles/civic-data-commons.manifest.json --output work/SUPPORT.md
