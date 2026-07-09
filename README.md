@@ -14,6 +14,8 @@ This repository is designed around one goal: make healthy open-source maintenanc
 - `docs/`: maintainer playbooks and practical guidance.
 - `examples/`: demo manifests and sample reports.
 
+See [CLI recipes](docs/cli-recipes.md) for maintainer workflows that combine these commands.
+
 ## Why this helps open source
 
 Small maintainers often lose time to repeated non-code work: unclear contribution paths, thin documentation, inconsistent issue triage, and manual release steps. This kit turns those maintenance patterns into repeatable assets that any project can adapt.

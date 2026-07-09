@@ -1,47 +1,63 @@
-# Community Health Report: Civic Data Commons
+# Open Source Health Report: Civic Data Commons
 
-Generated from demo data. This report is an example output for Open Source Builder Kit and does not describe a real project assessment.
+Generated: 2026-07-09 00:55 UTC
 
-## Snapshot
+## Summary
 
-- Project stage: growth
+A demo open-source toolkit for publishing searchable municipal datasets with clear metadata and lightweight contributor workflows.
+
+- Repository: https://github.com/example/civic-data-commons
+- License: Apache-2.0
+- Tags: municipal data teams, civic technologists, public-interest researchers
+- Health score: 78/100
+- Grade: C
+- Score band: Strong foundation with a few visible gaps
+
+## Maintainer Focus
+
+Prioritize security policy, issue templates, release notes. These gaps have the clearest effect on contributor trust and maintainer load.
+
+## Maintainers
+
+- Maintainer 1 (Project maintainer)
+- Maintainer 2 (Project maintainer)
+- Maintainer 3 (Project maintainer)
+- Maintainer 4 (Project maintainer)
+- Maintainer 5 (Project maintainer)
+
+## Signals Present
+
+- readme
+- license
+- contributing
+- code_of_conduct
+- pull_request_template
+- ci
+- tests
+- roadmap
+- maintainers_listed
+
+## Signals Missing
+
+- security_policy
+- issue_templates
+- release_notes
+
+## Recommended Next Actions
+
+- Add SECURITY.md with supported versions and private vulnerability reporting guidance.
+- Add issue templates for bugs, features, docs, and maintainer tasks.
+- Publish release notes so users can understand changes and upgrade risk.
+
+## Contributor-Ready Tasks
+
+- **Write a security policy** (security): Add supported versions, private reporting instructions, and expected response windows.
+- **Add issue templates** (triage): Create structured templates for bugs, feature requests, documentation, and maintainer tasks.
+- **Create a release notes process** (release): Document changelog expectations and publish user-facing release notes for each tagged version.
+
+## Maintainer Notes
+
 - Maintainer model: small volunteer core with rotating triage support
-- Monthly active contributors: 22
-- First-time contributors in the last 90 days: 9
-- Open issues: 124
-- Open pull requests: 14
-
-## Health Summary
-
-Overall status: stable with backlog pressure.
-
-Civic Data Commons has signs of a healthy contributor funnel, especially for documentation and dataset adapter work. The primary risk is maintainer attention: 37 issues are older than 90 days, 18 issues are untriaged, and median pull request review time is 4.6 days. These are manageable signals for a growth-stage community, but they should be addressed before public-sector adoption increases support demand.
-
-## Strengths
-
-- Clear quickstart and architecture guide help contributors understand the project.
-- Nine first-time contributors in 90 days suggests onboarding paths are working.
-- Public planning notes give contributors visibility into decisions and priorities.
-
-## Risks
-
-- No maintainer guide is available, which makes it harder to rotate triage and review duties.
-- Older issues may hide duplicate requests, unsupported environments, or policy questions.
-- Accessibility testing is listed as a contribution path, but no dedicated review workflow is represented in the manifest.
-
-## Recommended Actions
-
-1. Create a maintainer guide with triage labels, review expectations, and release decision criteria.
-2. Run a two-week backlog review focused on issues older than 90 days.
-3. Add an accessibility review checklist to pull request templates and dataset adapter examples.
-4. Publish a roadmap section that distinguishes community support work from product feature work.
-
-## Example Scorecard
-
-| Area | Demo Score | Notes |
-| --- | ---: | --- |
-| Contributor onboarding | 8/10 | Strong entry points and active first-time contributors. |
-| Maintainer sustainability | 6/10 | Review time is acceptable, but role documentation is missing. |
-| Governance clarity | 7/10 | Monthly notes help, but release authority should be easier to find. |
-| Documentation coverage | 7/10 | Quickstart and architecture docs exist; maintainer docs are missing. |
-| Backlog hygiene | 5/10 | Aging and untriaged issues need scheduled attention. |
+- identify backlog areas where maintainers need triage support
+- turn community health signals into a transparent roadmap
+- prepare onboarding recommendations for public-sector contributors

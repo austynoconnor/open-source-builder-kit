@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 19:55:48 -05:00
+
+AI model: GPT-5 Codex.
+
+Added CLI workflow documentation and refreshed examples.
+
+- Added `docs/cli-recipes.md` with practical maintainer workflows for health checks, reports, contributor tasks, batch reporting, release checklists, and scaffolding.
+- Refreshed sample health reports using the current report renderer.
+- Linked the new recipe documentation from the README.
+
 ## 2026-07-08 19:55:14 -05:00
 
 AI model: GPT-5 Codex.

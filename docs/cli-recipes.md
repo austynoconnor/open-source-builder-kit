@@ -1,0 +1,58 @@
+# CLI Recipes
+
+These recipes show practical ways maintainers can use Open Source Builder Kit during normal project work.
+
+## Review a Project Before Asking for Help
+
+Run a health score first so the project has a clear baseline:
+
+```bash
+osbk health examples/project-profiles/civic-data-commons.manifest.json
+```
+
+Then generate a report that can be attached to an issue, planning note, or maintainer discussion:
+
+```bash
+osbk report examples/project-profiles/civic-data-commons.manifest.json --output work/civic-data-commons-report.md
+```
+
+## Turn Health Gaps Into Contributor Work
+
+Use `tasks` when a maintainer knows the project needs help but does not yet have well-scoped issues:
+
+```bash
+osbk tasks examples/project-profiles/civic-data-commons.manifest.json --limit 5 --output work/contributor-tasks.md
+```
+
+The output is intentionally reviewable Markdown. Maintainers should edit it before opening public issues.
+
+## Generate Reports for Multiple Projects
+
+Use a batch file when reviewing multiple community projects or examples:
+
+```bash
+osbk batch-report data/demo-inputs/cli-batch.json --output-dir work/reports
+```
+
+Each job in the batch file points at a manifest and produces one Markdown report.
+
+## Prepare for a Release
+
+Generate a release checklist before tagging:
+
+```bash
+osbk checklist release --output work/release-checklist.md
+```
+
+Use the checklist as a working document. It should not replace maintainer judgment, but it helps avoid missed documentation, testing, and release-note steps.
+
+## Bootstrap Community Files
+
+Copy starter community files into another project:
+
+```bash
+osbk scaffold ../my-open-source-project
+```
+
+Review every generated file before publishing. Templates are meant to accelerate maintainer work, not pretend every project has the same governance model.
+
